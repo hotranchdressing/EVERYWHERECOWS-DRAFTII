@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ball Physics Environments</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/tdn1jnr.css">
+</head>
+<body>
+    <div class="outer-frame">
+        <!-- Top outer frame -->
+        <div class="outer-top">
+
+        </div>
+
+        <!-- Central viewport where Three.js renders -->
+        <div class="viewport-container">
+            <div id="canvas-container"></div>
+        </div>
+
+        <!-- Bottom outer frame -->
+        <div class="outer-bottom">
+            <!-- Progress map -->
+            <div class="progress-section">
+                <div id="progress-map" class="progress-map"></div>
+                <p class="scene-counter"><span id="current-scene">1</span> / 15</p>
+            </div>
+
+            <!-- Product info display -->
+            <div id="product-info" class="product-info">
+                <p id="product-text">Awaiting collision...</p>
+            </div>
+
+            <!-- Navigation hint -->
+            <div class="nav-hint">
+                <p id="scroll-hint">Scroll to continue</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: bc-novatica-cyr, sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: bc-novatica-cyr, sans-serif;
+font-weight: 300;
+font-style: normal;
+  background: #fff8eb;
+}
+
+.outer-frame {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* TOP OUTER FRAME */
+.outer-top {
+  padding: 20px 40px;
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+
+.outer-top h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.outer-top p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* CENTRAL VIEWPORT */
+.viewport-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  pointer-events: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+#canvas-container {
+  width: 80%;
+  height: 80%;
+  background-image: url("images/dots2.jpg");
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+#canvas-container canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* BOTTOM OUTER FRAME */
+.outer-bottom {
+  background:  #fff8eb;
+  padding: 20px 40px;
+  pointer-events: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-shrink: 0;
+}
+
+/* PROGRESS MAP */
+.progress-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.progress-map {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.scene-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.scene-dot:hover {
+  transform: scale(1.15);
+}
+
+.scene-dot.visited {
+  background: black;
+  opacity: 0.6;
+}
+
+.scene-dot.active {
+  background: white;
+  box-shadow: 0 0 8px black;
+  transform: scale(1.2);
+  border-color: black;
+}
+
+.scene-counter {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* PRODUCT INFO */
+.product-info {
+  flex: 1;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 6px;
+  padding: 12px 16px;
+  border-left: 4px solid #ff6b35;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#product-text {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* NAV HINT */
+.nav-hint {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+#scroll-hint {
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+#scroll-hint.locked {
+  opacity: 0.4;
+}
+
+#scroll-hint.unlocked {
+  opacity: 1;
+  color: #ff6b35;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .outer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .progress-section {
+    width: 100%;
+  }
+
+  .product-info {
+    width: 100%;
+  }
+
+  .nav-hint {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .outer-top h1 {
+    font-size: 20px;
+  }
+
+  .outer-top p {
+    font-size: 12px;
+  }
+
+  #canvas-container {
+    width: 90%;
+    height: 90%;
+  }
+
+  .viewport-container {
+    padding: 15px;
+  }
+}
